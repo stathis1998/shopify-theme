@@ -1,6 +1,6 @@
 ---
 description: Liquid development rules for Shopify themes
-globs:
+<!-- globs: -->
 alwaysApply: true
 ---
 
