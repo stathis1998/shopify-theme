@@ -10,10 +10,10 @@ For your contribution to be accepted, you'll need to sign the [Shopify Contribut
 
 ## Standards
 
-* This codebase must be minimalist, not a fully featured theme.
-* This theme must provide a common foundational starting point for most developers.
-* Do not include or reference legacy or non-recommended features.
-* All changes must preserve the principles defined in the README.
+- This codebase must be minimalist, not a fully featured theme.
+- This theme must provide a common foundational starting point for most developers.
+- Do not include or reference legacy or non-recommended features.
+- All changes must preserve the principles defined in the README.
 
 ## Steps to contribute
 

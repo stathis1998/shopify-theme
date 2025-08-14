@@ -1,0 +1,33 @@
+<div class="custom-section">
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom Section",
+  "blocks": [{ "type": "@theme" }],
+  "presets": [
+    {
+      "name": "Custom Section",
+      "blocks": [
+        {
+          "type": "info",
+          "name": "Info Block",
+          "settings": {
+            "title": "Custom Info Block",
+            "description": "This is a custom info block description."
+          }
+        },
+        {
+          "type": "info",
+          "name": "Info Block 2",
+          "settings": {
+            "title": "Custom Info Block",
+            "description": "This is a custom info block description."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

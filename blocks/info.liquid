@@ -1,0 +1,40 @@
+<style>
+  .info-block {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+</style>
+
+<div class="info-block">
+  <h1>{{ block.settings.title }}</h1>
+  <p>{{ block.settings.description }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info",
+      "settings": {
+        "title": "Info Block",
+        "description": "This is a info block description."
+      }
+    }
+  ]
+}
+{% endschema %}

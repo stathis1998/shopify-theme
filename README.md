@@ -85,9 +85,7 @@ When developing components defined by schema settings, we recommend these guidel
 - **Single property settings**: For settings that correspond to a single CSS property, use CSS variables:
 
   ```liquid
-  <div class="collection" style="--gap: {{ block.settings.gap }}px">
-    ...
-  </div>
+  <div class="collection" style="--gap: {{ block.settings.gap }}px">...</div>
 
   {% stylesheet %}
     .collection {
@@ -97,15 +95,17 @@ When developing components defined by schema settings, we recommend these guidel
 
   {% schema %}
   {
-    "settings": [{
-      "type": "range",
-      "label": "gap",
-      "id": "gap",
-      "min": 0,
-      "max": 100,
-      "unit": "px",
-      "default": 0,
-    }]
+    "settings": [
+      {
+        "type": "range",
+        "label": "gap",
+        "id": "gap",
+        "min": 0,
+        "max": 100,
+        "unit": "px",
+        "default": 0
+      }
+    ]
   }
   {% endschema %}
   ```
@@ -113,9 +113,7 @@ When developing components defined by schema settings, we recommend these guidel
 - **Multiple property settings**: For settings that control multiple CSS properties, use CSS classes:
 
   ```liquid
-  <div class="collection {{ block.settings.layout }}">
-    ...
-  </div>
+  <div class="collection {{ block.settings.layout }}">...</div>
 
   {% stylesheet %}
     .collection--full-width {
@@ -128,15 +126,17 @@ When developing components defined by schema settings, we recommend these guidel
 
   {% schema %}
   {
-    "settings": [{
-      "type": "select",
-      "id": "layout",
-      "label": "layout",
-      "values": [
-        { "value": "collection--full-width", "label": "t:options.full" },
-        { "value": "collection--narrow", "label": "t:options.narrow" }
-      ]
-    }]
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "layout",
+        "values": [
+          { "value": "collection--full-width", "label": "t:options.full" },
+          { "value": "collection--narrow", "label": "t:options.narrow" }
+        ]
+      }
+    ]
   }
   {% endschema %}
   ```
