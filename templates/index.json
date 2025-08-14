@@ -12,25 +12,7 @@
     "main": {
       "type": "hello-world",
       "settings": {}
-    },
-    "custom-section-2": {
-      "type": "custom-section-2",
-      "settings": {
-        "title": "Information Section",
-        "description": "This section provides additional information."
-      },
-      "blocks": {
-        "info-block": {
-          "type": "info",
-          "name": "Information Block",
-          "settings": {
-            "title": "Block Title",
-            "description": "This is a description for the information block."
-          }
-        }
-      },
-      "block_order": ["info-block"]
     }
   },
-  "order": ["custom-section-2", "main"]
+  "order": ["main"]
 }
