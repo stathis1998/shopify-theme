@@ -1,0 +1,25 @@
+{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="announcement-bar full-width">{{ section.settings.announcement_text | upcase }}</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "id": "announcement_text",
+      "type": "text",
+      "label": "Announcement Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Header",
+      "settings": {
+        "announcement_text": "Welcome to our store!"
+      }
+    }
+  ]
+}
+{% endschema %}

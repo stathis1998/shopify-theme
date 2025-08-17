@@ -14,7 +14,11 @@
     "header": {
       "type": "header",
       "settings": {}
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {}
     }
   },
-  "order": ["header"]
+  "order": ["announcement-bar", "header"]
 }
