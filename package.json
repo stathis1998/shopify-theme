@@ -1,10 +1,16 @@
 {
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev": "concurrently \"shopify theme dev\" \"npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --watch\""
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.3",
     "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "concurrently": "^9.2.0",
+    "tailwindcss": "^4.1.12"
   }
 }
