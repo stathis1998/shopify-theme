@@ -1,7 +1,5 @@
 <header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
+  <h2 class="header__title"><i class="fa-regular fa-house"></i> {{ shop.name | link_to: routes.root_url }}</h2>
 
   <div class="header__menu">
     {% for link in section.settings.menu.links %}

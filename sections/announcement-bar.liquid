@@ -1,6 +1,4 @@
-{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
-
-<div class="announcement-bar full-width">{{ section.settings.announcement_text }}</div>
+<div class="p-2 bg-black text-white text-center full-width">{{ section.settings.announcement_text }}</div>
 
 {% schema %}
 {
@@ -9,7 +7,8 @@
     {
       "id": "announcement_text",
       "type": "text",
-      "label": "Announcement Text"
+      "label": "Announcement Text",
+      "default": "Welcome to our store!"
     }
   ],
   "presets": [

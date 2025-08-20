@@ -7,8 +7,14 @@
     {% # Load and preload the critical CSS %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 
-    {% # Load Tailwind CSS %}
-    {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Dev-only Tailwind CDN: only when using the Shopify CLI proxy {%- endcomment -%}
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
+    <script src="https://kit.fontawesome.com/9ac8711e52.js" crossorigin="anonymous" defer></script>
+
+    {%- comment -%} Production stylesheet (compiled with Tailwind) {%- endcomment -%}
+    {% comment %} {{ 'tailwind.output.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+    {%- comment -%} Load the theme's JavaScript file {%- endcomment -%}
 
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}
