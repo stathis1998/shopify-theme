@@ -72,6 +72,10 @@ p:empty {
 }
 
 /** Theme styles below */
+:root {
+  --color-border: #000;
+}
+
 body {
   font-family: var(--font-primary--family);
   background-color: var(--color-background);

@@ -1,0 +1,37 @@
+/* Search Form */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search Bar */
+.search-form > input[type="search"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+}
+
+/* Search Results */
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.search-results .prev,
+.search-results .page,
+.search-results .next {
+  grid-column: 1 / -1;
+}
