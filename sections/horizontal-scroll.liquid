@@ -1,0 +1,25 @@
+<section class="py-6 full-width">
+  <div
+    class="overflow-x-auto overscroll-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab touch-pan-y px-4"
+    data-hscroll
+  >
+    <div class="flex gap-4">
+      {% for i in (1..10) %}
+        <div>
+          {% assign end_margin = forloop.last | default: false %}
+          <div class="shrink-0 w-36 h-28 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center {% if end_margin %}mr-4{% endif %}">
+            <i class="fa-solid fa-image text-3xl"></i>
+          </div>
+          <div class="text-center">Item {{ forloop.index }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Horizontal scroll",
+  "settings": []
+}
+{% endschema %}

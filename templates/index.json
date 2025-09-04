@@ -8,6 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "horizontal-scroll": {
+      "type": "horizontal-scroll",
+      "settings": {}
+    }
+  },
+  "order": [
+    "horizontal-scroll"
+  ]
 }
