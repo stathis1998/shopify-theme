@@ -11,14 +11,22 @@
   "type": "header",
   "name": "t:general.header",
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
     "announcement-bar": {
       "type": "announcement-bar",
-      "settings": {}
+      "settings": {
+        "announcement_text": "Welcome to our store!"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "",
+        "phone_number": "2130 264098"
+      }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }

@@ -1,4 +1,6 @@
-<div class="p-2 bg-black text-white text-center full-width">{{ section.settings.announcement_text }}</div>
+<div class="h-8 bg-black text-white full-width grid place-items-center text-sm">
+  {{ section.settings.announcement_text | upcase }}
+</div>
 
 {% schema %}
 {

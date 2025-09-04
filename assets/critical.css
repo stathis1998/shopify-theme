@@ -1,15 +1,10 @@
 /** Critical CSS for the theme. This file is included on every page. */
 
-/* Reset styles inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
+/* Tailwind Preflight handles base resets (box-sizing, margins, media defaults) */
 
 body {
   display: flex;
   flex-direction: column;
-  margin: 0;
   min-height: 100svh;
 }
 
@@ -17,20 +12,11 @@ html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
   overflow: hidden;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+/* Media element resets are handled by Tailwind Preflight */
 
 input,
 textarea,
 select {
-  font: inherit;
   border-radius: var(--style-border-radius-inputs);
 }
 
@@ -47,29 +33,13 @@ dialog {
 p {
   text-wrap: pretty;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
+/* Opt-in wrapping via utilities like break-words; avoid global override */
 
-p:empty {
-  display: none;
-}
+/* Avoid hiding empty paragraphs globally to prevent unexpected CMS output */
 
-:is(p, h1, h2, h3, h4, h5, h6):first-child,
-:empty:first-child + :where(p, h1, h2, h3, h4, h5, h6) {
-  margin-block-start: 0;
-}
+/* Remove global first/last-child margin tweaks; control spacing with utilities */
 
-:is(p, h1, h2, h3, h4, h5, h6):last-child,
-:where(p, h1, h2, h3, h4, h5, h6) + :has(+ :empty:last-child) {
-  margin-block-end: 0;
-}
+/* See note above */
 
 /** Theme styles below */
 body {

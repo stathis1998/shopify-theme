@@ -4,7 +4,8 @@
     "format:check": "prettier --check .",
     "build": "npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --minify",
     "watch": "npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --watch",
-    "dev": "shopify theme dev"
+    "dev": "shopify theme dev",
+    "dev:sync": "shopify theme dev --theme-editor-sync"
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.3",
