@@ -1,4 +1,4 @@
-<section class="py-6 full-width">
+<section class="py-4 full-width">
   <div
     class="overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab touch-pan-y scroll-px-4 px-4"
     data-hscroll
@@ -8,8 +8,8 @@
         {%- comment -%} Collections selected → show them {%- endcomment -%}
         {% for collection in section.settings.collections %}
           {% if collection %}
-            <a href="{{ collection.url }}" class="block shrink-0 w-36">
-              <div class="w-36 h-28 rounded-lg border border-stone-300 overflow-hidden bg-white flex items-center justify-center">
+            <a href="{{ collection.url }}" class="block shrink-0 w-24">
+              <div class="w-24 h-20 rounded-lg border border-stone-300 overflow-hidden bg-white flex items-center justify-center">
                 {% if collection.image %}
                   {{
                     collection.image
@@ -27,8 +27,8 @@
       {% else %}
         {%- comment -%} No collections selected → placeholders {%- endcomment -%}
         {% for i in (1..10) %}
-          <div class="shrink-0 w-36">
-            <div class="w-36 h-28 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center">
+          <div class="shrink-0 w-24">
+            <div class="w-24 h-20 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center">
               <i class="fa-solid fa-image text-3xl"></i>
             </div>
             <div class="mt-1 text-center text-sm">Item {{ forloop.index }}</div>
