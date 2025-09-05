@@ -11,7 +11,13 @@
   "sections": {
     "horizontal-scroll": {
       "type": "horizontal-scroll",
-      "settings": {}
+      "settings": {
+        "collections": [
+          "minimal-cotton-shorts",
+          "essential-unisex-t-shirts",
+          "the-classic-collection"
+        ]
+      }
     }
   },
   "order": [

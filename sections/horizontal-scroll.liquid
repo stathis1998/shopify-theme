@@ -1,18 +1,40 @@
 <section class="py-6 full-width">
   <div
-    class="overflow-x-auto overscroll-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab touch-pan-y px-4"
+    class="overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab touch-pan-y scroll-px-4 px-4"
     data-hscroll
   >
     <div class="flex gap-4">
-      {% for i in (1..10) %}
-        <div>
-          {% assign end_margin = forloop.last | default: false %}
-          <div class="shrink-0 w-36 h-28 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center {% if end_margin %}mr-4{% endif %}">
-            <i class="fa-solid fa-image text-3xl"></i>
+      {% if section.settings.collections %}
+        {%- comment -%} Collections selected → show them {%- endcomment -%}
+        {% for collection in section.settings.collections %}
+          {% if collection %}
+            <a href="{{ collection.url }}" class="block shrink-0 w-36">
+              <div class="w-36 h-28 rounded-lg border border-stone-300 overflow-hidden bg-white flex items-center justify-center">
+                {% if collection.image %}
+                  {{
+                    collection.image
+                    | image_url: width: 320
+                    | image_tag: alt: collection.title, loading: 'lazy', class: 'w-full h-full object-cover'
+                  }}
+                {% else %}
+                  <i class="fa-solid fa-image text-stone-300 text-3xl"></i>
+                {% endif %}
+              </div>
+              <div class="mt-1 text-center font-bold text-sm">{{ collection.title }}</div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {%- comment -%} No collections selected → placeholders {%- endcomment -%}
+        {% for i in (1..10) %}
+          <div class="shrink-0 w-36">
+            <div class="w-36 h-28 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center">
+              <i class="fa-solid fa-image text-3xl"></i>
+            </div>
+            <div class="mt-1 text-center font-bold text-sm">Item {{ forloop.index }}</div>
           </div>
-          <div class="text-center">Item {{ forloop.index }}</div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>
@@ -20,6 +42,13 @@
 {% schema %}
 {
   "name": "Horizontal scroll",
-  "settings": []
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections"
+    }
+  ],
+  "presets": [{ "name": "Horizontal scroll", "category": "Custom" }]
 }
 {% endschema %}
