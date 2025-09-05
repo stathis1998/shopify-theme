@@ -4,7 +4,7 @@
     data-hscroll
   >
     <div class="flex gap-4">
-      {% if section.settings.collections %}
+      {% if section.settings.collections and section.settings.collections.count > 0 %}
         {%- comment -%} Collections selected → show them {%- endcomment -%}
         {% for collection in section.settings.collections %}
           {% if collection %}
@@ -20,7 +20,7 @@
                   <i class="fa-solid fa-image text-stone-300 text-3xl"></i>
                 {% endif %}
               </div>
-              <div class="mt-1 text-center font-bold text-sm">{{ collection.title }}</div>
+              <div class="mt-1 text-center text-xs">{{ collection.title }}</div>
             </a>
           {% endif %}
         {% endfor %}
@@ -31,7 +31,7 @@
             <div class="w-36 h-28 border border-stone-300 text-stone-300 rounded-lg snap-start flex items-center justify-center">
               <i class="fa-solid fa-image text-3xl"></i>
             </div>
-            <div class="mt-1 text-center font-bold text-sm">Item {{ forloop.index }}</div>
+            <div class="mt-1 text-center text-sm">Item {{ forloop.index }}</div>
           </div>
         {% endfor %}
       {% endif %}
